@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_gray">#D8D2D2</color>
+    <color name="red">#BC0B0B</color>
+    <color name="lime">#00FF0A</color>
+    <color name="main_brown">#F8EFE6FF</color>
+
+
+    <color name="light_green">#5EF864</color>
+    <color name="dark_green">#014203</color>
+    <color name="dark_gray">#585D60</color>
+    <color name="purple_700">#481D94</color>
+    <color name="purple_500">#6009FA</color>
+    <color name="dark_blue">#18286B</color>
+    <color name="light_gray">#8A9493</color>
+    <color name="colorPrimary">#18286B</color> <!-- Deep Blue -->
+    <color name="colorPrimaryDark">#6A5ACD</color> <!-- Slate Blue -->
+    <color name="colorAccent">#B8A6CB</color> <!-- Lavender -->
+    <color name="grey">#707375</color> <!-- Lavender -->
+    <color name="dark_brown">#A95534</color>
+    <color name="light_brown">#E7D0C7</color>
+    <color name="light_blue">#6EC3F4</color> <!-- light_blue -->
+    <color name="deep_blue">#02192C</color> <!-- deep_blue -->
+    <color name="Blue1">#18286B</color> <!-- deep_blue -->
+    <color name="midnightblue">#191970</color>
+    <color name="quantum_black_divider">#212126</color>
+    <color name="starGold">#FFD700</color>
+    <color name="transparent">#00000000</color>
+
+
+
+
+    <!-- Background Colors -->
+    <color name="colorGray">#D1D5DB</color> <!-- Cool Gray -->
+
+    <!-- Text Colors -->
+    <color name="textColorPrimary">#18286B</color> <!-- Deep Blue for text -->
+    <color name="textColorSecondary">#6A5ACD</color> <!-- Slate Blue for accent text -->
+
+    <!-- Button Colors -->
+    <color name="buttonColorPrimary">#18286B</color> <!-- Deep Blue for buttons -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- White text on buttons -->
+
+    <!-- Hint Text Colors -->
+    <color name="hintTextColorPrimary">#6A5ACD</color> <!-- Slate Blue for hint text -->
+
+
+
+    <color name="primary_text">#212121</color>        <!-- Dark Gray for names -->
+    <color name="secondary_text">#757575</color>      <!-- Medium Gray for info -->
+
+    <!-- Functional Colors -->
+    <color name="rating_color">#FFA000</color>        <!-- Amber for ratings -->
+    <color name="success_color">#388E3C</color>       <!-- Green for success rate -->
+    <color name="block_button_color">#D32F2F</color>  <!-- Red for block icon -->
+
+    <!-- Border Color -->
+    <color name="profile_border_color">#BDBDBD</color> <!-- Light gray border -->
+    <color name="see_details_button_color">#4CAF50</color> <!-- Green for See Details -->
+
+
+
+    <color name="overlay_default_background">#A0A9A7A7</color> <!-- Semi-transparent dark grey -->
+    <color name="overlay_unavailable_background">#A0888888</color> <!-- Semi-transparent grey -->
+    <color name="overlay_pending_background">#A0FAF2DA</color>   <!-- Semi-transparent Amber/Yellow -->
+    <color name="overlay_rejected_background">#A0FBAFA9</color>  <!-- Semi-transparent Red -->
+    <color name="overlay_removed_background">#A0757575</color>   <!-- Semi-transparent Darker Grey -->
+    <color name="overlay_negotiation_background">#A02196F3</color><!-- Semi-transparent Blue -->
+    <color name="overlay_exchanged_background">#A04CAF50</color>  <!-- Semi-transparent Green -->
+
+
+
+
+        <!-- ... other colors ... -->
+        <color name="overlay_warning_background">#80FFA500</color> <!-- Semi-transparent orange -->
+        <color name="overlay_error_background">#80FF0000</color>   <!-- Semi-transparent red -->
+
+        <color name="light_orange">#FFCC80</color> <!-- Or your preferred warning color -->
+        <color name="dark_red_overlay">#CCAA0000</color> <!-- Darker red for permanent block overlay -->
+
+</resources>

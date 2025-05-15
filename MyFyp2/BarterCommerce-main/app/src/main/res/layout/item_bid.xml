@@ -1,0 +1,176 @@
+<!-- item_bid.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"> <!-- Increased padding slightly -->
+
+        <!-- Item Comparison Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|top"
+        android:baselineAligned="false"> <!-- Recommended for weightSum -->
+
+        <!-- Requested Item (Left Side) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/requested_item_box"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingEnd="6dp"> <!-- Add padding between items -->
+
+            <TextView
+                android:id="@+id/requested_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Requested"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"/> <!-- Use theme color -->
+
+            <ImageView
+                android:id="@+id/requested_item_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" /> <!-- Use tools:srcCompat -->
+
+            <TextView
+                android:id="@+id/requested_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                tools:text="Requested Item Name Long Title"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+        <!-- Exchange Icon in Middle (Optional) -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_exchange"
+            app:tint="?android:attr/textColorSecondary"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Exchange"/>
+
+        <!-- Offered Item(s) (Right Side) -->
+        <LinearLayout
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/offered_item_box_clickable"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingStart="6dp"> <!-- Add padding between items -->
+
+            <TextView
+                android:id="@+id/offered_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offer"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/dark_green"/>
+
+            <ImageView
+                android:id="@+id/offered_item_image"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="4dp"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/offered_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            tools:text="Offered Item 1 Name Long Title"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+            <!-- **** NEW TextView for showing "+ X more" **** -->
+            <TextView
+                android:id="@+id/tv_more_offered_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="+ 2 more items"
+                android:textSize="12sp"
+                android:textColor="@color/dark_gray"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+            tools:visibility="visible"/>
+            <!-- **** END NEW TextView **** -->
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Status TextView -->
+    <TextView
+        android:id="@+id/tv_bid_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:padding="6dp"
+        tools:text="Status: Pending"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/grey" /> <!-- Adjust background based on status -->
+
+    <!-- Replace Button -->
+    <Button
+        android:id="@+id/btn_replace"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Your Offer"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+        <!-- item_bid.xml, inside the main LinearLayout, perhaps below btn_replace -->
+        <Button
+            android:id="@+id/btn_withdraw_offer"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Withdraw Offer"
+            android:textColor="@color/red"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+        tools:visibility="visible"/>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+

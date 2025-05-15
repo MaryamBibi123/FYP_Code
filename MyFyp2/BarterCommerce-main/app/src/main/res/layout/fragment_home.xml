@@ -1,0 +1,239 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7FAF7"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/padding_large">
+
+    <!-- Title for Latest Items -->
+    <TextView
+        android:id="@+id/latestItemsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="Latest Items"
+        android:textColor="@color/dark_green"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold" />
+
+    <!-- RecyclerView for Latest Items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/latestItemsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
+
+    <!-- Horizontal ScrollView for Category Buttons -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:backgroundTint="#EFFBF7"
+
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:id="@+id/categoryNamesLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:background="@drawable/white_rounded_corner"
+            android:gravity="center"
+            android:backgroundTint="#FFFFFF"
+
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_small">
+
+            <!-- Category Buttons -->
+            <TextView
+                android:id="@+id/categoryElectronics"
+                style="@style/CategoryButton"
+                android:text="Electronics" />
+
+            <TextView
+                android:id="@+id/categoryClothing"
+                style="@style/CategoryButton"
+                android:text="Clothing" />
+
+            <TextView
+                android:id="@+id/categoryBooks"
+                style="@style/CategoryButton"
+                android:text="Books" />
+
+            <TextView
+                android:id="@+id/categoryCosmetics"
+                style="@style/CategoryButton"
+                android:text="Cosmetics" />
+
+            <TextView
+                android:id="@+id/categoryVehicles"
+                style="@style/CategoryButton"
+                android:text="Vehicles" />
+
+            <TextView
+                android:id="@+id/categoryFurniture"
+                style="@style/CategoryButton"
+                android:text="Furniture" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Title for Explore section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:text="Explore"
+        android:textColor="@color/dark_green"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold" />
+
+    <!-- RecyclerView for Product Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
+
+</LinearLayout>
+
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    android:background="@color/light_blue"-->
+    <!--    android:paddingBottom="70dp"-->
+    <!--    android:orientation="vertical">-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/latestItemsTitle"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:layout_marginBottom="8dp"-->
+    <!--        android:text="Latest Items"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textColor="@color/Blue1"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/latestItemsRecyclerView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="5dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:scrollbars="horizontal" />-->
+    <!--     <HorizontalScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:fillViewport="true">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/categoryNamesLayout"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:padding="8dp"-->
+    <!--            android:layout_marginStart="8dp"-->
+    <!--            android:background="@drawable/rounded_corners"-->
+    <!--            android:gravity="center">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/categoryElectronics"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:background="@drawable/rounded_background"-->
+    <!--                android:text="Electronics"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:gravity="center" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/categoryClothing"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:background="@drawable/rounded_background"-->
+    <!--                android:text="Clothing"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:gravity="center" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/categoryBooks"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:background="@drawable/rounded_background"-->
+    <!--                android:text="Books"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:gravity="center" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/categoryBeauty"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:background="@drawable/rounded_background"-->
+    <!--                android:text="Beauty"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:gravity="center" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/categoryCars"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:background="@drawable/rounded_background"-->
+    <!--                android:text="Cars"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:gravity="center" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/categoryHomeAppliances"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:background="@drawable/rounded_background"-->
+    <!--                android:text="Home Appliances"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:gravity="center" />-->
+    <!--        </LinearLayout>-->
+    <!--    </HorizontalScrollView>-->
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:text="Explore"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textColor="@color/dark_green"-->
+    <!--        android:textStyle="bold" />-->
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/productGrid"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/toolbar"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--         />-->
+
+
+    <!--</LinearLayout>-->

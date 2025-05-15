@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context=".SignUpLogin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_150sdp"
+        android:background="@drawable/rounded_background">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/buying" />
+
+        <!-- Main Header -->
+        <TextView
+            android:id="@+id/textView_main_head"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:text="Welcome To BarterCommerce"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintTop_toBottomOf="@id/imageView_logo"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:text="Login"
+            android:backgroundTint="#18286B"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/white_rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/textView_main_head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/button_Register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:text="Register"
+            android:backgroundTint="@color/dark_blue"
+            android:textColor="@android:color/white"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/white_rounded_corner"
+            app:layout_constraintTop_toBottomOf="@id/button_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Login Message TextView -->
+        <TextView
+            android:id="@+id/textView_login_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:text="You must verify your email before logging in"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/button_Register"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+
+
+
+
+    <!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/light_blue"-->
+<!--    tools:context=".SignUpLogin">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingVertical="100dp"-->
+<!--        android:paddingHorizontal="20dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:backgroundTint="@color/light_blue"-->
+
+<!--        android:background="@drawable/rounded_background"-->
+<!--        android:layout_gravity="center"> &lt;!&ndash; Rounded background &ndash;&gt;-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView_logo"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:maxWidth="180dp"-->
+
+<!--            app:srcCompat="@drawable/buying" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView_main_head"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Welcome To BarterCommerce"-->
+<!--            android:textAlignment="center"-->
+<!--            android:layout_marginBottom="40dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/imageView_logo" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button_login"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="150dp"-->
+<!--            android:text="Login"-->
+<!--            android:backgroundTint="#18286B"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/textView_main_head" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button_Register"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="Register"-->
+<!--            android:backgroundTint="@color/dark_blue"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/button_login" />-->
+
+<!--        &lt;!&ndash; New TextView to show the login restriction message &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView_login_message"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="You must verify your email before logging in"-->
+<!--            android:textColor="@android:color/holo_red_dark"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/button_Register" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</ScrollView>-->

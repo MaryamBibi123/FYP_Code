@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav_graph"
+    app:startDestination="@id/showUsersFragment">
+
+    <!-- Show Users List -->
+    <fragment
+        android:id="@+id/showUsersFragment"
+        android:name="com.example.signuplogina.fragments.ShowUsersFragment"
+        android:label="All Users">
+
+        <!-- Navigate to User Profile for Admin -->
+        <action
+            android:id="@+id/action_showUsersFragment_to_userProfileForAdmin"
+            app:destination="@id/userProfileForAdmin" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/adminItemDetailFragment"
+        android:name="com.example.signuplogina.fragments.AdminItemsDetailsFragment"
+        android:label="Item Details (Admin)"
+        tools:layout="@layout/fragment_item_details">
+        <argument
+            android:name="item"
+            app:argType="com.example.signuplogina.Item" />
+        <!-- Action to navigate to Seller Profile -->
+        <action
+            android:id="@+id/action_adminItemDetailFragment_to_userProfileForAdmin"
+            app:destination="@id/userProfileForAdmin" />
+        <!-- No popUpTo needed here if we want backstack UserList -> ItemDetail -> SellerProfile -->
+
+
+    </fragment>
+
+    <!-- 3. Admin Items Host (Hosts tabs for ALL items) -->
+    <fragment
+        android:id="@+id/adminItemHostFragment"
+        android:name="com.example.signuplogina.fragments.AdminItemHostFragment"
+        android:label="@string/admin_items_title"
+        tools:layout="@layout/fragment_admin_item_host">
+        <!-- Action from item click within Admin Items tabs -> Item Detail -->
+        <action
+            android:id="@+id/action_adminItemsHostFragment_to_adminItemDetailFragment"
+            app:destination="@id/adminItemDetailFragment" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/adminItemListFragment"
+        android:name="com.example.signuplogina.fragments.AdminItemListFragment"
+        android:label="All_Items">
+
+        <!-- Navigate to User Profile for Admin -->
+        <!--        <action-->
+        <!--            android:id="@+id/action_showUsersFragment_to_userProfileForAdmin"-->
+        <!--            app:destination="@id/userProfileForAdmin" />-->
+    </fragment>
+
+
+    <!-- View Profile of Selected User -->
+    <fragment
+        android:id="@+id/userProfileForAdmin"
+        android:name="com.example.signuplogina.fragments.UserProfileForAdmin"
+        android:label="User Profile">
+
+        <argument
+            android:name="user"
+            app:argType="com.example.signuplogina.User"
+            app:nullable="true" />
+
+
+        <action
+            android:id="@+id/action_userProfileForAdmin_to_adminItemDetailFragment"
+            app:destination="@id/adminItemDetailFragment" />
+
+        <action
+            android:id="@+id/action_userProfileForAdmin_to_adminPendingReportsFragment"
+            app:destination="@id/adminPendingReportsFragment" />
+
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/adminPendingReportsFragment"
+        android:name="com.example.signuplogina.fragments.AdminPendingReportsFragment"
+        android:label="userProfileForAdmin">
+                <action
+                    android:id="@+id/action_adminPendingReportsFragment_to_userProfileForAdminFragment"
+                    app:destination="@id/userProfileForAdmin" />
+        <argument
+            android:name="userIdForProfile"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+
+    </fragment>
+
+
+</navigation>

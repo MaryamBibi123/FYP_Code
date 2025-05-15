@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Item Image"
+        android:background="@drawable/circle_border"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/offeredText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="You are offering: 🎸 Guitar"
+        android:textSize="18sp"
+        android:textColor="@color/Blue1"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/itemImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/wantedText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="What Do You Want?"
+        android:textSize="18sp"
+        android:textColor="@color/Blue1"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/offeredText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/wantedET"
+        android:layout_width="match_parent"
+        android:hint="Earphones?"
+        android:text="Earphones?"
+        app:layout_constraintTop_toBottomOf="@id/wantedText"
+        app:layout_constraintBottom_toTopOf="@id/postToStoryBtn"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:id="@+id/confirmPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you want to post this to your story?"
+        android:textSize="16sp"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/wantedET"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/postToStoryBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post to Story"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/confirmPrompt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

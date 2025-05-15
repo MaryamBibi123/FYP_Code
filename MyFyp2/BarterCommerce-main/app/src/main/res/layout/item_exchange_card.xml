@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardExchangeItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:strokeColor="@color/grey"
+    app:strokeWidth="1dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/itemRootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- **** ADDED LABEL **** -->
+            <TextView
+                android:id="@+id/tvItemOwnershipLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/label_background_default"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="Your Item"
+                tools:visibility="visible" />
+            <!-- **** END ADDED LABEL **** -->
+
+
+            <!-- Top Row: Image + Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/itemImage"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/circular_border"
+                    android:contentDescription="Item Image"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/itemName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:text="Item Name" />
+
+                    <TextView
+                        android:id="@+id/itemCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="14sp"
+                        tools:text="Condition: Good" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/expandIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Expand Details"
+                    android:src="@drawable/arrow_down"
+                    app:tint="@color/midnightblue" />
+            </LinearLayout>
+
+            <!-- Expandable Details -->
+            <LinearLayout
+                android:id="@+id/expandableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- ... Description, Category TextViews ... -->
+                <TextView
+                    android:id="@+id/itemDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="Description: ..." />
+
+                <TextView
+                    android:id="@+id/itemCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/nunito"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="Category: ..." />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- UNAVAILABLE OVERLAY -->
+        <TextView
+            android:id="@+id/unavailableOverlayExchange"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A0333333"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="UNAVAILABLE"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+    </FrameLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<com.google.android.material.card.MaterialCardView-->
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:id="@+id/cardExchangeItem"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_marginBottom="12dp"-->
+    <!--    android:layout_marginTop="8dp"-->
+    <!--    android:layout_marginStart="6dp"-->
+    <!--    android:layout_marginEnd="6dp"-->
+    <!--    app:cardCornerRadius="16dp"-->
+    <!--    app:cardElevation="6dp"-->
+    <!--    app:strokeColor="@color/white"-->
+    <!--    app:strokeWidth="1dp"-->
+    <!--    android:clickable="true"-->
+    <!--    android:focusable="true"-->
+    <!--    android:foreground="?attr/selectableItemBackground">-->
+
+    <!--    &lt;!&ndash; FrameLayout to allow overlaying &ndash;&gt;-->
+    <!--    <FrameLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <!--        &lt;!&ndash; Your Original Content Layout &ndash;&gt;-->
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/itemRootLayout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:padding="12dp">-->
+
+    <!--            &lt;!&ndash; Top Row: Image + Info &ndash;&gt;-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:gravity="center_vertical">-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/itemImage"-->
+    <!--                    android:layout_width="72dp"-->
+    <!--                    android:layout_height="72dp"-->
+    <!--                    android:scaleType="centerCrop"-->
+    <!--                    android:background="@drawable/circular_border"-->
+    <!--                    android:contentDescription="Item Image"/>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:layout_marginStart="12dp">-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/itemName"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Item Name"-->
+    <!--                        android:textSize="16sp"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:fontFamily="@font/nunito_bold" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/itemCondition"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Condition: Good"-->
+    <!--                        android:textSize="14sp"-->
+    <!--                        android:textColor="@color/dark_gray"-->
+    <!--                        android:fontFamily="@font/nunito" />-->
+    <!--                </LinearLayout>-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/expandIcon"-->
+    <!--                    android:layout_width="24dp"-->
+    <!--                    android:layout_height="24dp"-->
+    <!--                    android:src="@drawable/arrow_back"-->
+    <!--                    app:tint="@color/midnightblue"-->
+    <!--                    android:contentDescription="Expand Details"/>-->
+    <!--            </LinearLayout>-->
+
+    <!--            &lt;!&ndash; Expandable Details &ndash;&gt;-->
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/expandableLayout"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical"-->
+    <!--                android:visibility="gone"-->
+    <!--                android:layout_marginTop="8dp">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/itemDescription"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="Description: This is a great item in like-new condition. Used only a few times."-->
+    <!--                    android:textSize="14sp"-->
+    <!--                    android:textColor="@color/black"-->
+    <!--                    android:fontFamily="@font/nunito" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/itemCategory"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginTop="4dp"-->
+    <!--                    android:text="Category: Electronics"-->
+    <!--                    android:textSize="14sp"-->
+    <!--                    android:textColor="@color/black"-->
+    <!--                    android:fontFamily="@font/nunito" />-->
+    <!--            </LinearLayout>-->
+
+    <!--        </LinearLayout>-->
+
+    <!--        &lt;!&ndash; UNAVAILABLE OVERLAY - Sibling to the main content layout &ndash;&gt;-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/unavailableOverlayExchange"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:text="UNAVAILABLE"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="14sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:gravity="center"-->
+    <!--            android:background="#A0023822"-->
+    <!--            android:visibility="gone"-->
+    <!--            android:elevation="10dp"-->
+    <!--            android:clickable="true"-->
+    <!--            android:focusable="true"-->
+    <!--            tools:visibility="gone"/>-->
+
+    <!--    </FrameLayout>-->
+
+    <!--</com.google.android.material.card.MaterialCardView>-->
+
+
+
+

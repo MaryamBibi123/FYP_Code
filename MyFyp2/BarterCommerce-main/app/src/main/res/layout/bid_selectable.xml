@@ -1,0 +1,147 @@
+<!-- res/layout/item_selectable_bid.xml -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardBid"
+    android:layout_width="@dimen/_140sdp"
+    android:layout_height="@dimen/_140sdp"
+    android:layout_margin="@dimen/_12sdp"
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardElevation="@dimen/_6sdp"
+    android:foreground="?attr/selectableItemBackground"
+    android:background="@drawable/selectable_item_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <!-- Image on top -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/offered_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:contentDescription="Offered Item Image"
+                android:src="@drawable/default_profile_image" />
+
+            <!-- Optional check icon in top-right -->
+            <ImageView
+                android:id="@+id/ivCheck"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_gravity="top|end"
+                android:layout_margin="6dp"
+                android:src="@drawable/ic_check_circle"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <!-- Text below image -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/bidder_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bidder: John Doe"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/offered_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offered Item: iPhone X"
+                android:textColor="#444444"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/bid_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: Pending"
+                android:textColor="#777777"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+
+
+    <!--&lt;!&ndash; res/layout/item_selectable_bid.xml &ndash;&gt;-->
+<!--<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:id="@+id/cardBid"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="12dp"-->
+<!--    app:cardCornerRadius="16dp"-->
+<!--    app:cardElevation="6dp"-->
+<!--    android:foreground="?attr/selectableItemBackground"-->
+<!--    android:background="@drawable/selectable_item_background"-->
+
+
+<!--    >-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingHorizontal="20dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:background="@color/white">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/offered_image"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:contentDescription="Offered Item Image"-->
+<!--            android:src="@drawable/default_profile_image" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="16dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/bidder_name"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Bidder: John Doe"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/offered_item"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Offered Item: iPhone X"-->
+<!--                android:textColor="#444444"-->
+<!--                android:textSize="16sp"-->
+<!--                android:layout_marginTop="6dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/bid_status"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Status: Pending"-->
+<!--                android:textColor="#777777"-->
+<!--                android:textSize="14sp"-->
+<!--                android:layout_marginTop="4dp" />-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+<!--</com.google.android.material.card.MaterialCardView>-->

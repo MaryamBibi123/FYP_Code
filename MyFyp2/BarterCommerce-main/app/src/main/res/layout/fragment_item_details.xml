@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/arrowBack"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/default_margin"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Like Button -->
+<!--        <ImageView-->
+<!--            android:id="@+id/likeButton"-->
+<!--            android:layout_width="@dimen/icon_size"-->
+<!--            android:layout_height="@dimen/icon_size"-->
+<!--            android:layout_marginTop="@dimen/default_margin"-->
+<!--            android:layout_marginEnd="@dimen/default_margin"-->
+<!--            android:src="@drawable/ic_heart_outline"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!-- Product Image Carousel -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/productImageCarousel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/carousel_height"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            app:layout_constraintTop_toBottomOf="@id/arrowBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Dots Indicator -->
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:dotsColor="@color/grey"
+            app:dotsSize="@dimen/dot_size"
+            app:selectedDotColor="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/productImageCarousel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center"
+            android:text="Oversized Fit Printed Mesh T-Shirt"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toBottomOf="@id/dots_indicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Category and Condition Layout -->
+        <LinearLayout
+            android:id="@+id/categoryConditionLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:paddingTop="@dimen/margin_medium"
+            app:layout_constraintTop_toBottomOf="@id/productName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Category"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/productCategoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Furniture"
+                    android:textColor="@color/dark_green"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Condition"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/productConditionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Description Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/descriptionCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:layout_constraintTop_toBottomOf="@id/categoryConditionLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:id="@+id/toggleDescriptionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/descriptionTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Details"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_small"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <ImageView
+                        android:id="@+id/arrowIcon"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        android:src="@drawable/arrow_back"
+                        app:tint="@color/grey" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/productDescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="Description: laptop dell 5th generation"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/text_small"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingExtra="@dimen/line_spacing"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:id="@+id/buttonsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:layout_marginHorizontal="@dimen/spacing_large"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/descriptionCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/exploreSellerProfileButton"
+                android:layout_width="@dimen/button_min_width"
+                android:layout_height="@dimen/button_min_height"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:backgroundTint="@color/black"
+                android:text="Explore Seller"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/bidNowButton"
+                android:layout_width="@dimen/button_min_width"
+                android:layout_height="@dimen/button_min_height"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/margin_small"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Bid Now"
+                android:textSize="@dimen/text_size_small"
+
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/progress_bar"
+            android:visibility="gone"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+
+    <!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:background="@color/white"-->
+<!--android:fillViewport="true">-->
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content">-->
+
+<!--    &lt;!&ndash; Top bar with back and like buttons &ndash;&gt;-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_top"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/spacing_medium"-->
+<!--        app:cardElevation="@dimen/_4sdp"-->
+<!--        app:cardCornerRadius="@dimen/_12sdp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="@dimen/padding_small">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/arrowBack"-->
+<!--                android:layout_width="@dimen/icon_size_medium"-->
+<!--                android:layout_height="@dimen/icon_size_medium"-->
+<!--                android:src="@drawable/arrow_back"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/likeButton"-->
+<!--                android:layout_width="@dimen/icon_size_medium"-->
+<!--                android:layout_height="@dimen/icon_size_medium"-->
+<!--                android:src="@drawable/ic_heart_outline"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    &lt;!&ndash; Product images carousel &ndash;&gt;-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/productImageCard"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="@dimen/spacing_medium"-->
+<!--        android:layout_marginTop="@dimen/spacing_large"-->
+<!--        app:cardCornerRadius="@dimen/_16sdp"-->
+<!--        app:cardElevation="@dimen/_6sdp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/card_top"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/productImageCarousel"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_400sdp"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/dots_indicator" />-->
+
+<!--            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator-->
+<!--                android:id="@+id/dots_indicator"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/spacing_small"-->
+<!--                app:dotsColor="#949494"-->
+<!--                app:dotsSize="@dimen/_10sdp"-->
+<!--                app:selectedDotColor="@color/dark_blue"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/productImageCarousel"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    &lt;!&ndash; Product Name &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/productName"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Oversized Fit Printed Mesh T-Shirt"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="@dimen/text_size_large"-->
+<!--        android:textStyle="bold"-->
+<!--        android:fontFamily="sans-serif-medium"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_margin="@dimen/spacing_medium"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/productImageCard"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; Category & Condition &ndash;&gt;-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/categoryConditionCard"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/spacing_medium"-->
+<!--        app:cardCornerRadius="@dimen/_12sdp"-->
+<!--        app:cardElevation="@dimen/_4sdp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/productName"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="@dimen/padding_medium">-->
+
+<!--            &lt;!&ndash; Category &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:text="Category"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/text_size_medium"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/productCategoryText"-->
+<!--                    android:text="Home Appliances"-->
+<!--                    android:textColor="@color/dark_green"-->
+<!--                    android:textSize="@dimen/text_size_small"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content" />-->
+<!--            </LinearLayout>-->
+
+<!--            &lt;!&ndash; Condition &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="@dimen/spacing_small">-->
+
+<!--                <TextView-->
+<!--                    android:text="Condition"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/text_size_medium"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/productConditionText"-->
+<!--                    android:text="Good"-->
+<!--                    android:textColor="@color/Blue1"-->
+<!--                    android:textSize="@dimen/text_size_small"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content" />-->
+<!--            </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    &lt;!&ndash; Description &ndash;&gt;-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/descriptionCard"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/spacing_medium"-->
+<!--        app:cardCornerRadius="@dimen/_12sdp"-->
+<!--        app:cardElevation="@dimen/_4sdp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/categoryConditionCard"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="@dimen/padding_medium">-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/toggleDescriptionLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/descriptionTitle"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="Details"-->
+<!--                    android:textColor="@color/grey"-->
+<!--                    android:textSize="@dimen/text_size_small"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/arrowIcon"-->
+<!--                    android:layout_width="@dimen/icon_size_small"-->
+<!--                    android:layout_height="@dimen/icon_size_small"-->
+<!--                    android:src="@drawable/arrow_back"-->
+<!--                    app:tint="@color/grey" />-->
+<!--            </LinearLayout>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/productDescriptionText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/spacing_small"-->
+<!--                android:text="Description: laptop dell 5th generation"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="@dimen/text_size_extra_small"-->
+<!--                android:visibility="gone" />-->
+<!--        </LinearLayout>-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    &lt;!&ndash; Buttons &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_margin="@dimen/spacing_medium"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/descriptionCard"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/exploreSellerProfileButton"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginEnd="@dimen/spacing_small"-->
+<!--            android:backgroundTint="@color/black"-->
+<!--            android:text="Explore Seller"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/bidNowButton"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginStart="@dimen/spacing_small"-->
+<!--            android:backgroundTint="@color/dark_blue"-->
+<!--            android:text="Bid Now"-->
+<!--            android:textColor="@color/white" />-->
+<!--    </LinearLayout>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</ScrollView>-->

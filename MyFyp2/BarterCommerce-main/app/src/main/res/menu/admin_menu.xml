@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_users"
+        android:icon="@drawable/ic_pending"
+        android:title="Users" />
+    <!--    <item-->
+    <!--        android:id="@+id/nav_approved"-->
+    <!--        android:icon="@drawable/ic_accepted"-->
+    <!--        android:iconTint="@color/light_blue"-->
+    <!--        android:title="Approved" />-->
+    <!--    <item-->
+    <!--        android:id="@+id/nav_rejected"-->
+    <!--        android:icon="@drawable/ic_rejected"-->
+    <!--        android:title="Rejected" />-->
+    <item
+        android:id="@+id/nav_admin_items"
+        android:icon="@drawable/chatapp"
+        android:title="Items" />
+
+
+    <item
+        android:id="@+id/nav_admin_reports"
+        android:icon="@drawable/ic_email"
+        android:title="Reports" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:iconTint="@color/light_blue"
+        android:title="Logout" />
+</menu>

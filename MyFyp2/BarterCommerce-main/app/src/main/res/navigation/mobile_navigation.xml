@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.example.signuplogina.AddItemFragment"
+        android:label="AddItemFragment">
+        <action
+            android:id="@+id/action_addItemFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_addItemFragment_to_postToStoryFragment"
+            app:destination="@id/postToStoryFragment" />
+
+
+    </fragment>
+
+
+
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/postToStoryFragment"
+        android:name="com.example.signuplogina.fragments.PostToStoryFragment"
+        android:label="PostToStoryFragment">
+        <action
+            android:id="@+id/action_postStoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/myListingsFragment"
+        android:name="com.example.signuplogina.MyListingFragment"
+        android:label="My Listings">
+        <action
+            android:id="@+id/action_myListingsFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+
+<!--        <action-->
+<!--            android:id="@+id/action_myListingsFragment_to_offeredItemsDetailsFragment"-->
+<!--            app:destination="@id/offeredItemsDetailsFragment" />-->
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/offeredItemsDetailsFragment"
+        android:name="com.example.signuplogina.fragments.OfferedItemsDetailsFragment"
+        android:label="Offer Details"
+        tools:layout="@layout/fragment_offered_items_details">
+        <argument
+            android:name="bidId"
+            app:argType="string" />
+        <argument
+            android:name="offeredItemIds"
+            app:argType="string[]" />
+        <argument
+            android:name="isCurrentUserBidReceiver"
+            app:argType="boolean" />
+        <argument
+            android:name="requestedItemId"
+            app:argType="string" />
+        <argument
+            android:name="isFromOtherUserProfile"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <!-- Action from here to ItemDetailsFragment -->
+        <action
+            android:id="@+id/action_offeredItemsDetailsFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/filteredUsersFragment"
+        android:name="com.example.signuplogina.fragments.FilteredUsersFragment"
+        android:label="filteredUsersFragment">
+        <action
+            android:id="@+id/action_filteredUsersFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.signuplogina.fragments.UserProfileFragment"
+        android:label="userProfileFragment">
+
+
+        <action
+            android:id="@+id/action_userProfileFragment_to_ItemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+
+        <action
+            android:id="@+id/action_userProfileFragment_to_offeredItemsDetailsFragment"
+            app:destination="@id/offeredItemsDetailsFragment" />
+
+
+
+    </fragment>
+
+
+
+    <!--    the bidsFragment -->
+    <fragment
+        android:id="@+id/bidsFragment"
+        android:name="com.example.signuplogina.BidsFragment"
+        android:label="Bids"
+        tools:layout="@layout/fragment_bids">
+        <action
+            android:id="@+id/action_bidsFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+        <action
+            android:id="@+id/action_bidsFragment_to_selectProductFragment"
+            app:destination="@id/selectProductFragment" />
+
+        <action
+            android:id="@+id/action_bidsFragment_to_offeredItemsDetailsFragment"
+            app:destination="@id/offeredItemsDetailsFragment" />
+
+        <!-- Other actions FROM BidsFragment -->
+
+        <action
+            android:id="@+id/action_bidsFragment_to_homeExchangeFragment"
+            app:destination="@id/homeExchangeFragment" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/categoryScreenFragment"
+        android:name="com.example.signuplogina.CategoryScreenFragment"
+        android:label="CategoryScreenFragment">
+        <action
+            android:id="@+id/action_categoryScreenFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.signuplogina.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_categoryScreenFragment"
+            app:destination="@id/categoryScreenFragment" />
+
+
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.signuplogina.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_searchFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.signuplogina.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment_to_updateProfileActivity"
+            app:destination="@id/updateProfileActivity" />
+<!--        <action-->
+<!--            android:id="@+id/action_profileFragment_to_filteredUsersFragment"-->
+<!--            app:destination="@id/filteredUsersFragment" />-->
+        <action
+            android:id="@+id/action_profileFragment_to_bidsFragment"
+            app:destination="@id/bidsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_barterBuzzFragment"
+            app:destination="@id/barterBuzzFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/updateProfileActivity"
+        android:name="com.example.signuplogina.UpdateProfileActivity"
+        android:label="UpdateProfileActivity" />
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.example.signuplogina.ItemDetailsFragment"
+        android:label="fragment_item_details"
+        tools:layout="@layout/fragment_item_details">
+        <action
+            android:id="@+id/action_itemDetailsFragment_to_selectProductFragment"
+            app:destination="@id/selectProductFragment" />
+        <action
+            android:id="@+id/action_itemDetailsFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/selectProductFragment"
+        android:name="com.example.signuplogina.SelectProductFragment"
+        android:label="Select Product"
+        tools:layout="@layout/fragment_select_product" />
+
+    <fragment
+        android:id="@+id/barterBuzzFragment"
+        android:name="com.example.signuplogina.fragments.BarterBuzzFragment"
+        android:label="barterBuzzFragment"
+        tools:layout="@layout/fragment_barter_buzz" />
+
+    <action
+        android:id="@+id/action_global_addItemFragment"
+        app:destination="@id/addItemFragment" />
+
+
+    <fragment
+        android:id="@+id/homeChatFragment"
+        android:name="com.example.signuplogina.fragments.HomeChatFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_chat_home">
+        <action
+            android:id="@+id/action_homeChatFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeChatFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_homeChatFragment_to_homeExchangeFragment"
+            app:destination="@id/homeExchangeFragment"/>
+
+        <action
+            android:id="@+id/action_homeChatFragment_to_filteredUsersFragment"
+            app:destination="@id/filteredUsersFragment"/>
+        <action
+            android:id="@+id/action_homeChatFragment_to_chatfromHome"
+            app:destination="@id/chatfromHome"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/homeExchangeFragment"
+        android:name="com.example.signuplogina.fragments.HomeExchangeFragment"
+        android:label="fragment_exchange_home"
+        tools:layout="@layout/fragment_exchange_home">
+        <argument
+            android:name="bidId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+
+        <argument
+            android:name="roomName"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+
+
+        <action
+            android:id="@+id/action_homeExchangeFragment_to_chatExchangeFragment"
+            app:destination="@id/chatExchangeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeExchangeFragment_to_settingFragment"
+            app:destination="@id/settingFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_homeExchangeFragment_to_homeChatExchangeFragment"
+            app:destination="@id/homeChatExchangeFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.signuplogina.fragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <argument
+            android:name="users"
+            app:argType="com.example.signuplogina.User" />
+        <action
+            android:id="@+id/action_chatFragment_to_homeChatFragment"
+            app:destination="@id/homeChatFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/chatExchangeFragment"
+        android:name="com.example.signuplogina.fragments.ChatExchangeFragment"
+        android:label="fragment_exchange_chat"
+        tools:layout="@layout/fragment_exchange_chat" >
+        <argument
+            android:name="users"
+            app:argType="com.example.signuplogina.User" />
+        <argument
+            android:name="bidId"
+            app:argType="string"
+            android:defaultValue=""/>
+
+        <action
+            android:id="@+id/action_chatExchangeFragment_to_homeExchangeFragment"
+            app:destination="@id/homeExchangeFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.signuplogina.fragments.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_homeChatFragment"
+            app:destination="@id/homeChatFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/chatfromHome"
+        android:name="com.example.signuplogina.fragments.ChatfromHome"
+        android:label="ChatfromHome" >
+        <action
+            android:id="@+id/action_chatfromHome_to_homeChatFragment"
+            app:destination="@id/homeChatFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="recentchats"
+            app:argType="com.example.signuplogina.modal.RecentChats" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeChatExchangeFragment"
+        android:name="com.example.signuplogina.fragments.HomeChatExchangeFragment"
+        android:label="homeChatExchange" >
+
+        <action
+            android:id="@+id/action_homeChatExchangeFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment"/>
+
+        <action
+            android:id="@+id/action_homeChatExchangeFragment_to_homeExchangeFragment"
+            app:destination="@id/homeChatExchangeFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="recentchats"
+            app:argType="com.example.signuplogina.modal.RecentChats" />
+<!--            android:defaultValue="true"-->
+
+        <action
+            android:id="@+id/action_homeChatExchangeFragment_to_ExchangeAgreementFragment"
+            app:destination="@id/exchangeAgreementFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/exchangeAgreementFragment"
+        android:name="com.example.signuplogina.fragments.ExchangeAgreementFragment"
+        android:label="ExchangeAgreementFragment">
+
+        <argument
+            android:name="bidId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true"/>
+        <argument
+            android:name="recentchats"
+            app:argType="com.example.signuplogina.modal.RecentChats"
+            android:defaultValue="@null"
+            app:nullable="true"/>
+    </fragment>
+
+
+</navigation>

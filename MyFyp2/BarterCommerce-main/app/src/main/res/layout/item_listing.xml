@@ -1,0 +1,312 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/padding_small"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardUseCompatPadding="true">
+
+    <!-- FrameLayout to hold both content and overlay -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"> <!-- Or wrap_content if CardView is wrap_content -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/MyListingView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small">
+
+            <!-- Product Image -->
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expandable_layout"
+                android:scaleType="centerCrop"
+                android:contentDescription="Product Image"
+                android:background="@drawable/circular_border" />
+
+            <!-- Right Container -->
+            <LinearLayout
+                android:id="@+id/right_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical|start"
+                app:layout_constraintStart_toEndOf="@id/item_image"
+                app:layout_constraintTop_toTopOf="@id/item_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/item_image"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingVertical="@dimen/padding_small"
+                android:paddingEnd="@dimen/padding_small">
+                <!-- ... (TextView item_name, Button button_bid_received) ... -->
+                <TextView
+                    android:id="@+id/item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Product Name"
+                    android:textColor="@color/Blue1"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+                <Button
+                    android:id="@+id/button_bid_received"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_bids_button"
+                    android:textSize="@dimen/text_size_extra_small"
+                    android:textColor="@color/colorPrimary"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingVertical="4dp"
+                    android:paddingHorizontal="8dp"
+                    app:icon="@drawable/ic_arrow_right"
+                    app:iconTint="@color/colorPrimary"
+                    app:iconGravity="end"
+                    android:gravity="center_vertical|start" />
+            </LinearLayout>
+
+            <!-- Expandable Layout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/expandable_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/item_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingTop="@dimen/padding_small">
+                <!-- ... (RecyclerView child_rv) ... -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/child_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="110dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:overScrollMode="never"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal"
+                    tools:listitem="@layout/child_bids"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- **** UNAVAILABLE OVERLAY - SIBLING to MyListingView, inside FrameLayout **** -->
+        <TextView
+            android:id="@+id/unavailableOverlayItem"
+            android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="UNAVAILABLE"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#CCB6B4B4"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        tools:visibility="visible"/>
+        <!-- **** END UNAVAILABLE OVERLAY **** -->
+
+    </FrameLayout>
+</androidx.cardview.widget.CardView>
+
+<!--adding unavailabel above-->
+<!--<androidx.cardview.widget.CardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="@dimen/margin_medium"-->
+<!--    app:cardCornerRadius="@dimen/card_corner_radius"-->
+<!--    app:cardElevation="@dimen/card_elevation"-->
+<!--    app:cardUseCompatPadding="true">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="@dimen/padding_large">-->
+
+<!--        &lt;!&ndash; Product Image &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/item_image"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintDimensionRatio="1:1"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/expandable_layout"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/right_container"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:contentDescription="Product Image"-->
+
+<!--            android:background="@drawable/rounded_rectangle_primary" />-->
+
+<!--        &lt;!&ndash; Right Container &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/right_container"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:gravity="start"-->
+<!--            app:layout_constraintStart_toEndOf="@id/item_image"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/expandable_layout"-->
+<!--            android:paddingStart="@dimen/padding_medium"-->
+<!--            android:paddingEnd="@dimen/padding_small">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/item_name"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Product Name"-->
+<!--                android:textColor="@color/Blue1"-->
+<!--                android:textSize="@dimen/text_large"-->
+<!--                android:textStyle="bold"-->
+<!--                android:maxLines="2"-->
+<!--                android:ellipsize="end" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/button_bid_received"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_small"-->
+<!--                android:text="View Bids"-->
+<!--                android:backgroundTint="@color/colorPrimary"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:minHeight="@dimen/button_min_height"-->
+<!--                android:minWidth="@dimen/button_min_width"-->
+<!--                android:gravity="center" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Expandable Layout &ndash;&gt;-->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/expandable_layout"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/item_image"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            android:paddingTop="@dimen/padding_small">-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/child_rv"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="210dp"-->
+<!--                android:nestedScrollingEnabled="false"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:overScrollMode="never"-->
+<!--                android:scrollbars="vertical" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</androidx.cardview.widget.CardView>-->
+
+
+
+
+
+
+    <!--<androidx.cardview.widget.CardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="8dp"-->
+<!--    app:cardCornerRadius="12dp"-->
+<!--    app:cardElevation="6dp"-->
+<!--    app:cardUseCompatPadding="true">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        &lt;!&ndash; Top Layout: Image + Name + Button &ndash;&gt;-->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="12dp">-->
+
+<!--            &lt;!&ndash; Product Image &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/item_image"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:contentDescription="Product Image"-->
+<!--                android:background="@drawable/ic_camera"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                android:layout_marginEnd="12dp" />-->
+
+<!--            &lt;!&ndash; Right Side: Name + Button &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/right_container"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="12dp"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                app:layout_constraintStart_toEndOf="@id/item_image"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/item_name"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Product Name"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@android:color/black"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:ellipsize="end" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/button_bid_received"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:text="View Bids"-->
+<!--                    android:backgroundTint="@color/colorPrimary"-->
+<!--                    android:textColor="@android:color/white" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        &lt;!&ndash; Expandable RecyclerView &ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/expandable_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone"> &lt;!&ndash; Initially hidden &ndash;&gt;-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/child_rv"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="210dp"-->
+<!--            android:nestedScrollingEnabled="false"-->
+<!--            android:overScrollMode="never"-->
+<!--            android:scrollbars="vertical" />-->
+<!--        </RelativeLayout>-->
+<!--    </LinearLayout>-->
+<!--</androidx.cardview.widget.CardView>-->

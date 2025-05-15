@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <!-- Card Content -->
+    <com.google.android.material.card.MaterialCardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:strokeColor="#000000"
+        app:strokeWidth="2dp"
+        app:cardCornerRadius="16dp"
+        android:backgroundTint="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Story Image -->
+            <ImageView
+                android:id="@+id/storyImage"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_camera"
+                app:contentDescription="Item image" />
+
+            <!-- Offering -->
+            <TextView
+                android:id="@+id/storyOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎸 Offering: Guitar"
+                android:textColor="#18286B"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Wants -->
+            <TextView
+                android:id="@+id/storyWant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎧 Wants: Headphones"
+                android:textColor="#6A5ACD"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Profile Info BELOW Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="6dp"
+        android:paddingHorizontal="4dp">
+
+        <!-- Circular Profile Pic -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_profile"
+            android:layout_marginEnd="6dp" />
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/uploaderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ali"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

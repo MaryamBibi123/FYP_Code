@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.signuplogina.mvvm.ChatAppViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.ChatFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBarChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/midnightblue">
+
+            <ImageView
+                android:id="@+id/chatBackBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/back" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/chatImageViewUser"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/person"
+                    app:civ_border_color="#FE2C54"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:id="@+id/chatUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="User name"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- This TextView seems part of the toolbar's user display. -->
+        <!-- It's positioned absolutely with margins from top/left of parent. -->
+        <!-- This might be fine if the toolbar height is fixed. -->
+        <TextView
+            android:id="@+id/chatUserStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="131dp"
+            android:layout_marginTop="37dp"
+            android:fontFamily="@font/nunito"
+            android:text="Online"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <!-- Chat Status Banner Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/chat_status_banner_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolBarChat"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"
+            app:cardElevation="4dp"
+            tools:cardBackgroundColor="@color/orange_warning"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_chat_status_banner_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                tools:text="Chat is disabled because a user is restricted." />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messagesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/layoutChatbox"
+            android:layout_below="@id/chat_status_banner_card"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutChatbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:minHeight="48dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Enter Message"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:maxLines="6"
+                android:text="@={viewModel.message}" />
+
+            <Button
+                android:id="@+id/sendBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:text="Send"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+
+    <!--<layout>-->
+
+
+    <!--    <data>-->
+
+    <!--        <variable-->
+    <!--            name="viewModel"-->
+    <!--            type="com.example.signuplogina.mvvm.ChatAppViewModel" />-->
+
+    <!--    </data>-->
+
+    <!--    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--        xmlns:tools="http://schemas.android.com/tools"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            android:id="@+id/toolBarChat"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@color/midnightblue">-->
+
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/chatBackBtn"-->
+    <!--                android:layout_width="30dp"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:layout_marginEnd="10dp"-->
+    <!--                android:src="@drawable/back" />-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:padding="5dp">-->
+
+
+    <!--                <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--                    android:id="@+id/chatImageViewUser"-->
+    <!--                    android:layout_width="60dp"-->
+    <!--                    android:layout_height="60dp"-->
+    <!--                    android:src="@drawable/person"-->
+    <!--                    app:civ_border_color="#FE2C54"-->
+    <!--                    app:civ_border_width="2dp" />-->
+
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/chatUserName"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginLeft="10dp"-->
+    <!--                    android:layout_marginTop="8dp"-->
+    <!--                    android:fontFamily="@font/nunito_bold"-->
+    <!--                    android:text="User name"-->
+    <!--                    android:textColor="#FFFFFF"-->
+    <!--                    android:textSize="18sp" />-->
+
+
+    <!--            </LinearLayout>-->
+
+
+    <!--        </androidx.appcompat.widget.Toolbar>-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/chatUserStatus"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="131dp"-->
+    <!--            android:layout_marginTop="37dp"-->
+    <!--            android:fontFamily="@font/nunito"-->
+    <!--            android:text="Online"-->
+    <!--            android:textColor="#FFFFFF"-->
+    <!--            android:textSize="16sp" />-->
+
+    <!--        &lt;!&ndash; fragment_chat.xml / fragment_chatfrom_home.xml &ndash;&gt;-->
+    <!--        <com.google.android.material.card.MaterialCardView-->
+    <!--            android:id="@+id/chat_status_banner_card"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="8dp"-->
+    <!--            android:layout_marginTop="4dp"-->
+    <!--            android:layout_marginEnd="8dp"-->
+    <!--            android:visibility="gone"-->
+    <!--            app:cardElevation="4dp"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/toolBarChat"-->
+    <!--            tools:cardBackgroundColor="@color/orange_warning"-->
+    <!--            tools:visibility="visible">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tv_chat_status_banner_message"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center"-->
+    <!--                android:padding="12dp"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:textSize="14sp"-->
+    <!--                tools:text="Chat is disabled because a user is restricted." />-->
+    <!--        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--        &lt;!&ndash; Make sure messagesRecyclerView is constrained below this banner &ndash;&gt;-->
+    <!--        &lt;!&ndash; Example: app:layout_constraintTop_toBottomOf="@id/chat_status_banner_card" &ndash;&gt;-->
+
+    <!--        <androidx.recyclerview.widget.RecyclerView-->
+    <!--            android:id="@+id/messagesRecyclerView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_above="@id/layoutChatbox"-->
+    <!--            android:layout_below="@id/toolBarChat"-->
+    <!--            android:layout_marginStart="10dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:layout_marginEnd="10dp"-->
+    <!--            android:layout_marginBottom="10dp" />-->
+
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/layoutChatbox"-->
+    <!--            android:layout_width="match_parent"-->
+
+
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_alignParentBottom="true"-->
+    <!--            android:background="@android:color/white"-->
+    <!--            android:minHeight="48dp"-->
+    <!--            android:orientation="horizontal">-->
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/editTextMessage"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:layout_marginLeft="16dp"-->
+    <!--                android:layout_marginRight="16dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:background="@android:color/transparent"-->
+    <!--                android:hint="Enter Message"-->
+    <!--                android:importantForAutofill="no"-->
+    <!--                android:inputType="textMultiLine"-->
+    <!--                android:maxLines="6"-->
+    <!--                android:text="@={viewModel.message}" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/sendBtn"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="8dp"-->
+    <!--                android:clickable="true"-->
+    <!--                android:text="Send"-->
+    <!--                android:textSize="14sp" />-->
+    <!--        </LinearLayout>-->
+
+
+    <!--    </RelativeLayout>-->
+
+    <!--</layout>-->
+

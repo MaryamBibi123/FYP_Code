@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_plan_meeting"
+        app:showAsAction="never"
+    android:icon="@drawable/ic_location"
+    android:title="Plan Meeting" />
+
+    <item
+        android:id="@+id/menu_agreement"
+        app:showAsAction="never"
+    android:icon="@drawable/ic_done_white_24dp"
+    android:title="View/Update Agreement" />
+
+    <item
+        android:id="@+id/menu_done_otp"
+        app:showAsAction="never"
+    android:icon="@drawable/ic_pending"
+    android:title="Finalize Exchange (OTP)" />
+
+    <item
+        android:id="@+id/menu_cancel_exchange"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_cancel"
+        android:title="Cancel Exchange" />
+</menu>

@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFDFB"
+    tools:context=".AdminActivity">
+
+    <!-- NavHostFragment for displaying different admin screens -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_admin_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/admin_nav_graph" />
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/bottom_nav_margin_horizontal"
+    android:layout_marginEnd="@dimen/bottom_nav_margin_horizontal"
+    android:layout_marginBottom="@dimen/bottom_nav_margin_bottom"
+    android:background="@drawable/bottom_nav_background"
+    android:backgroundTint="@color/dark_blue"
+    android:elevation="@dimen/bottom_nav_elevation"
+    app:itemIconTint="@color/light_blue"
+    app:itemTextColor="@color/light_blue"
+    app:menu="@menu/admin_menu" />
+
+</RelativeLayout>
+
+
+
+
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/light_blue"-->
+<!--    tools:context=".AdminActivity">-->
+
+<!--    &lt;!&ndash; ✅ REMOVE FrameLayout: not needed &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ✅ FIXED NavHostFragment &ndash;&gt;-->
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/nav_host_admin_fragment"-->
+<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_above="@id/bottom_nav"-->
+<!--        app:defaultNavHost="true"-->
+<!--        app:navGraph="@navigation/admin_nav_graph" />-->
+
+<!--    &lt;!&ndash; ✅ BOTTOM NAVIGATION BAR &ndash;&gt;-->
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_nav"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:background="@drawable/bottom_nav_background"-->
+<!--        android:backgroundTint="@color/dark_blue"-->
+<!--        android:elevation="4dp"-->
+<!--        app:itemIconTint="@color/light_blue"-->
+<!--        app:itemTextColor="@color/light_blue"-->
+<!--        app:menu="@menu/admin_menu" />-->
+
+<!--</RelativeLayout>-->

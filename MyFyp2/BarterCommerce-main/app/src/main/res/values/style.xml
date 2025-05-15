@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomFab" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="fabSize">normal</item>
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+    </style>
+    <style name="RoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressTint">@color/starGold</item>
+        <item name="android:progressTintMode">src_in</item>
+    </style>
+
+
+
+    <style name="CategoryButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/margin_small</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:background">#6EC3F4</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="YellowRatingBar" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlActivated">#FFD700</item> <!-- Gold/Yellow -->
+    </style>
+
+
+    <!--    <style name="CategoryItem">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:layout_marginEnd">8dp</item>-->
+<!--        <item name="android:padding">8dp</item>-->
+<!--        <item name="android:background">@drawable/rounded_background</item>-->
+<!--        <item name="android:textColor">@android:color/white</item>-->
+<!--        <item name="android:gravity">center</item>-->
+<!--    </style>-->
+
+
+</resources>

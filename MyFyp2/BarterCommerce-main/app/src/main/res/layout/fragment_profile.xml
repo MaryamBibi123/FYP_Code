@@ -1,0 +1,375 @@
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F8F5"
+    android:padding="16dp"
+    tools:context=".ProfileFragment">
+
+    <!-- Profile Picture -->
+<!--    <ImageView-->
+<!--        android:id="@+id/profileImage"-->
+<!--        android:layout_width="@dimen/_200sdp"-->
+<!--        android:layout_height="@dimen/_200sdp"-->
+
+<!--        android:background="@drawable/circle_border"-->
+<!--        android:contentDescription="Profile Image"-->
+<!--        android:padding="@dimen/_20sdp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/ic_profile"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:background="@drawable/circle_border"
+        android:contentDescription="Profile Image"
+        android:padding="@dimen/_20sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <ImageView
+        android:id="@+id/editProfileIcon"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/icons8pencil24"
+        android:background="@drawable/circular_border"
+        android:padding="@dimen/_5sdp"
+        android:contentDescription="Edit Profile Image"
+        android:elevation="2dp"
+        app:layout_constraintCircle="@id/profileImage"
+        app:layout_constraintCircleRadius="@dimen/_100sdp"
+        app:layout_constraintCircleAngle="45"
+        app:tint="@color/dark_green"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- Username -->
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="Your Name"
+        android:textColor="@color/dark_blue"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Stats Section -->
+    <LinearLayout
+        android:id="@+id/statsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_30sdp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintTop_toBottomOf="@id/userName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/exchangeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0\nExchanges"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/ratingCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0\nRating"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14ssp" />
+    </LinearLayout>
+
+    <!-- Rating Bar -->
+    <RatingBar
+        android:id="@+id/userRatingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4.5"
+        android:stepSize="0.5"
+        android:theme="@style/YellowRatingBar"
+        app:layout_constraintTop_toBottomOf="@id/statsContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Buttons Section -->
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/userRatingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/BidsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#08567C"
+            android:textSize="@dimen/_12sdp"
+            android:text="Bids"
+            android:textColor="@color/light_brown" />
+
+        <Button
+            android:id="@+id/barterBuzz"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#08567C"
+            android:textSize="@dimen/_12sdp"
+            android:text="BarterBuzz"
+            android:textColor="@color/light_brown" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#F4F8F5"-->
+<!--    android:padding="16dp"-->
+<!--    tools:context=".ProfileFragment">-->
+
+<!--    &lt;!&ndash; Profile Picture &ndash;&gt;-->
+<!--    <ImageView-->
+<!--        android:id="@+id/profileImage"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:background="@drawable/circle_border"-->
+<!--        android:contentDescription="Profile Image"-->
+<!--        android:padding="8dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/ic_profile"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    &lt;!&ndash; Username &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/userName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:text="Your Name"-->
+<!--        android:textColor="@android:color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/profileImage" />-->
+
+<!--    &lt;!&ndash; Stats Section &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/statsContainer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/userName">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/exchangeText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="4dp"-->
+<!--            android:text="0\nExchanges"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="14sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/ratingCount"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:text="0\nRating"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="14sp" />-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/likesCount"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="30\nLikes"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="center"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@android:color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="14sp" />&ndash;&gt;-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Rating Bar &ndash;&gt;-->
+<!--    <RatingBar-->
+<!--        android:id="@+id/userRatingBar"-->
+<!--        style="?android:attr/ratingBarStyleSmall"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:isIndicator="true"-->
+<!--        android:numStars="5"-->
+<!--        android:rating="4.5"-->
+<!--        android:stepSize="0.5"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/statsContainer" />-->
+
+
+<!--    &lt;!&ndash; Buttons Section &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/buttonsContainer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/statsContainer">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/editProfileButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:backgroundTint="@color/dark_blue"-->
+<!--            android:padding="0dp"-->
+<!--            android:text="✎"-->
+<!--            android:textColor="@color/light_brown"-->
+<!--            android:textSize="30sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/BidsButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:backgroundTint="@color/dark_blue"-->
+<!--            android:text="Bids"-->
+<!--            android:textColor="@color/light_brown" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/barterBuzz"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:backgroundTint="@color/dark_blue"-->
+<!--            android:text="BarterBuzz"-->
+<!--            android:textColor="@color/light_brown" />-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; TabLayout &ndash;&gt;-->
+<!--    &lt;!&ndash; TabLayout &ndash;&gt;-->
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="#F5F2F8"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/buttonsContainer"-->
+<!--        app:tabGravity="fill"-->
+<!--        app:tabIndicatorColor="@color/dark_blue"-->
+<!--        app:tabIndicatorHeight="6dp"-->
+<!--        app:tabMode="fixed"-->
+<!--        app:tabSelectedTextColor="@color/dark_blue"-->
+<!--        app:tabTextColor="@android:color/black">-->
+
+<!--        &lt;!&ndash; Remove IDs from TabItems &ndash;&gt;-->
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Sell Products" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Liked Items" /> &lt;!&ndash; Changed text back based on original ID name &ndash;&gt;-->
+
+<!--    </com.google.android.material.tabs.TabLayout>-->
+<!--    &lt;!&ndash;    <com.google.android.material.tabs.TabLayout&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/tabLayout"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="0dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginTop="16dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:background="@color/light_blue"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:tabMode="fixed"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:tabGravity="fill"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:tabTextColor="@android:color/black"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:tabSelectedTextColor="@color/dark_blue"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:tabIndicatorColor="@color/dark_blue"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:tabIndicatorHeight="6dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintTop_toBottomOf="@id/buttonsContainer"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        <com.google.android.material.tabs.TabItem&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:id="@+id/tabSellProducts"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:text="Sell Products" />&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        <com.google.android.material.tabs.TabItem&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:id="@+id/tabSavedItems"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:text="Liked Items" />&ndash;&gt;-->
+<!--    &lt;!&ndash;    </com.google.android.material.tabs.TabLayout>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; ViewPager2 &ndash;&gt;-->
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tabLayout" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

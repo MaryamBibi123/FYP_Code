@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="40dp"
+    android:fillViewport="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:strokeColor="#D1D5DB"
+        app:strokeWidth="1dp"
+        android:backgroundTint="@android:color/white">
+
+        <ProgressBar
+            android:id="@+id/progressBarAgreement"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:visibility="visible" android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/agreementTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🤝 Exchange Agreement"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#18286B" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#D1D5DB" />
+
+            <!-- Participants -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nParticipants:"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+                <CheckBox
+                    android:id="@+id/checkboxUserA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User A: @usernameA"
+                    android:textColor="#444444"
+                    android:enabled="false" /> <!-- Will enable only if current user is A -->
+
+                <CheckBox
+                    android:id="@+id/checkboxUserB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User B: @usernameB"
+                    android:textColor="#444444"
+                    android:enabled="false" /> <!-- Will enable only if current user is B -->
+            </LinearLayout>
+
+            <!-- Meeting Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nMeeting Details:"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/meetingLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Location: XYZ Mall"
+                android:textColor="#444444" />
+
+            <TextView
+                android:id="@+id/meetingTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Date And Time: Sunday, 5 PM"
+                android:textColor="#444444" />
+
+            <!-- Terms -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nTerms:"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• No refund or tradeback.\n• Items are exchanged as-is."
+                android:textColor="#444444" />
+
+            <!-- Status -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nStatus:"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/agreementStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="❌ Awaiting user confirmation..."
+                android:textColor="#B00020" />
+
+            <!-- Timestamp -->
+            <TextView
+                android:id="@+id/timestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n📅 20 April 2025, 3:45 PM"
+                android:textColor="#888888"
+                android:textSize="12sp" />
+
+            <!-- Add this at the end of your LinearLayout, just before closing it -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="100dp"
+                android:weightSum="2"
+                android:paddingTop="8dp">
+
+                <!-- Close Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnClose"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Close"
+                    android:textColor="#B00020"
+                    android:backgroundTint="#F4F4F9"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_close"
+                    app:iconTint="@color/red"
+                    />
+
+                <!-- Save Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="Save"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#18286B"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_check" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</ScrollView>

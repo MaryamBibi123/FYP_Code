@@ -1,0 +1,159 @@
+<resources>
+
+    <!-- Spacing -->
+    <dimen name="spacing_small">@dimen/_8sdp</dimen>
+    <dimen name="spacing_medium">@dimen/_16sdp</dimen>
+    <dimen name="spacing_large">@dimen/_24sdp</dimen>
+    <dimen name="spacing_extra_large">@dimen/_32sdp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_small">@dimen/_8sdp</dimen>
+    <dimen name="padding_medium">@dimen/_16sdp</dimen>
+    <dimen name="padding_large">@dimen/_24sdp</dimen>
+
+    <!-- Sizes -->
+    <dimen name="icon_size_small">@dimen/_24sdp</dimen>
+    <dimen name="icon_size_medium">@dimen/_30sdp</dimen>
+    <dimen name="icon_size_large">@dimen/_48sdp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_extra_small">@dimen/_10ssp</dimen>
+
+    <dimen name="text_size_small">@dimen/_12ssp</dimen>
+    <dimen name="text_size_medium">@dimen/_16ssp</dimen>
+    <dimen name="text_size_large">@dimen/_20ssp</dimen>
+
+    <!-- Margins -->
+    <dimen name="margin_large">@dimen/_24sdp</dimen>
+    <dimen name="margin_medium">@dimen/_16sdp</dimen>
+    <dimen name="margin_small">@dimen/_8sdp</dimen>
+
+    <!-- Button and Image Sizes -->
+    <dimen name="button_height">@dimen/_48sdp</dimen>
+    <dimen name="image_size">@dimen/_24sdp</dimen>
+
+    <dimen name="text_large">@dimen/_20ssp</dimen>
+    <dimen name="text_medium">@dimen/_16ssp</dimen>
+    <dimen name="icon_size">@dimen/_30sdp</dimen>
+    <dimen name="button_corner_radius">@dimen/_12sdp</dimen>
+
+    <!-- Item Product -->
+    <dimen name="item_product_padding">@dimen/_8sdp</dimen>
+    <dimen name="item_product_card_width">@dimen/_160sdp</dimen>
+    <dimen name="item_product_card_radius">@dimen/_10sdp</dimen>
+    <dimen name="item_product_card_elevation">@dimen/_2sdp</dimen>
+    <dimen name="item_product_inner_padding">@dimen/_8sdp</dimen>
+    <dimen name="item_product_image_height">@dimen/_140sdp</dimen>
+
+    <!-- Product Condition Badge -->
+    <dimen name="item_product_condition_margin">@dimen/_8sdp</dimen>
+    <dimen name="item_product_condition_padding_horizontal">@dimen/_8sdp</dimen>
+    <dimen name="item_product_condition_padding_vertical">@dimen/_4sdp</dimen>
+    <dimen name="item_product_condition_text_size">@dimen/_12ssp</dimen>
+    <dimen name="item_product_condition_elevation">@dimen/_6sdp</dimen>
+
+    <dimen name="item_product_card_margin">@dimen/_6sdp</dimen>
+
+    <!-- Product Name -->
+    <dimen name="item_product_name_marginTop">@dimen/_8sdp</dimen>
+    <dimen name="item_product_name_text_size">@dimen/_16ssp</dimen>
+    <dimen name="item_product_name_paddingEnd">@dimen/_8sdp</dimen>
+
+    <!-- CardView -->
+    <dimen name="card_corner_radius">@dimen/_8sdp</dimen>
+    <dimen name="card_elevation">@dimen/_8sdp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_small">@dimen/_12ssp</dimen>
+
+    <dimen name="text_xlarge">@dimen/_20ssp</dimen>
+
+    <!-- Button Sizes -->
+    <dimen name="button_min_height">@dimen/_40sdp</dimen>
+    <dimen name="button_min_width">@dimen/_120sdp</dimen>
+
+    <!-- RecyclerView -->
+    <dimen name="recycler_min_height">@dimen/_150sdp</dimen>
+
+
+    <dimen name="spacing_extra_small">@dimen/_4sdp</dimen>
+
+    <!-- Image Sizes -->
+    <dimen name="product_image_width">@dimen/_150sdp</dimen>
+    <dimen name="product_image_height">@dimen/_150sdp</dimen>
+    <dimen name="product_image_card_radius">@dimen/_12sdp</dimen>
+
+
+    <!-- Button Sizes -->
+    <dimen name="like_button_size">@dimen/_24sdp</dimen>
+
+
+    <dimen name="default_margin">@dimen/_16sdp</dimen>
+
+    <dimen name="margin_xlarge">@dimen/_32sdp</dimen>
+
+    <dimen name="icon_small">@dimen/_24sdp</dimen>
+
+    <dimen name="carousel_height">@dimen/_300sdp</dimen>
+
+    <dimen name="dot_size">@dimen/_8sdp</dimen>
+
+    <dimen name="line_spacing">@dimen/_4sdp</dimen>
+
+    <dimen name="padding_screen">@dimen/_16sdp</dimen>
+
+    <dimen name="text_size_title">@dimen/_24ssp</dimen>
+
+    <dimen name="text_size_subtitle">@dimen/_18ssp</dimen>
+
+    <dimen name="text_size_body">@dimen/_16ssp</dimen>
+
+    <dimen name="recycler_height">@dimen/_180sdp</dimen>
+
+    <dimen name="text_size_head">@dimen/_32sdp</dimen>
+    <dimen name="text_size_checkbox">@dimen/_14sdp</dimen>
+    <dimen name="text_size_button">@dimen/_12sdp</dimen>
+
+    <!-- Padding and margins -->
+        <!-- Margin and Padding Dimensions -->
+        <dimen name="margin_top_title">@dimen/_40sdp</dimen>
+        <dimen name="margin_top_subtitle">@dimen/_60sdp</dimen>
+        <dimen name="margin_top_input">@dimen/_10sdp</dimen>
+        <dimen name="margin_bottom_input">@dimen/_16sdp</dimen>
+        <dimen name="margin_top_checkbox">@dimen/_8sdp</dimen>
+        <dimen name="margin_top_button">@dimen/_50sdp</dimen>
+        <dimen name="margin_vertical_google_button">@dimen/_20sdp</dimen>
+        <dimen name="button_padding">@dimen/_12sdp</dimen>
+        <dimen name="google_button_padding_start">@dimen/_10sdp</dimen>
+
+        <!-- Width and height percentages -->
+        <dimen name="input_width_percentage">0.9</dimen>
+        <dimen name="button_width_percentage">0.9</dimen>
+
+        <!-- ProgressBar margin -->
+        <dimen name="progressbar_margin_top">@dimen/_18sdp</dimen>
+
+
+    <dimen name="card_margin">@dimen/_18sdp</dimen>
+<!--    <dimen name="card_corner_radius">@dimen/_12sdp</dimen>-->
+<!--    <dimen name="card_elevation">@dimen/_6sdp</dimen> &lt;!&ndash; You can define _6sdp if needed &ndash;&gt;-->
+    <dimen name="card_padding">@dimen/_16sdp</dimen>
+
+    <dimen name="profile_pic_size">@dimen/_60sdp</dimen>
+    <dimen name="profile_pic_margin_end">@dimen/_12sdp</dimen>
+    <dimen name="block_button_size">@dimen/_30sdp</dimen>
+
+    <dimen name="text_size_primary">@dimen/_16ssp</dimen>
+    <dimen name="text_size_secondary">@dimen/_12ssp</dimen>
+
+    <dimen name="space_small">@dimen/_4sdp</dimen>
+    <dimen name="space_medium">@dimen/_8sdp</dimen>
+
+    <dimen name="margin_xxlarge">@dimen/_32sdp</dimen>
+
+    <!-- Bottom Navigation Specific Dimensions -->
+    <dimen name="bottom_nav_margin_horizontal">@dimen/_10sdp</dimen> <!-- Used for start/end margin -->
+    <dimen name="bottom_nav_margin_bottom">@dimen/_20sdp</dimen>   <!-- Used for bottom margin -->
+    <dimen name="bottom_nav_elevation">@dimen/_4sdp</dimen>       <!-- Elevation -->
+    </resources>
+

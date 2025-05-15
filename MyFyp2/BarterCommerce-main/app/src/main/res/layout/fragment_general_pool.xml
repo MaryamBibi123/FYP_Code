@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/generalPollCoordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- RecyclerView to display polls as CardViews -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pollRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"/>
+
+<!--    &lt;!&ndash; Floating Action Button to add a new poll &ndash;&gt;-->
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fabAddPoll"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:contentDescription="Add Poll.kt"-->
+<!--        app:srcCompat="@drawable/ic_add"-->
+<!--        app:backgroundTint="@color/colorPrimaryDark"-->
+<!--        app:tint="@android:color/white"-->
+<!--        app:layout_anchorGravity="bottom|end"/>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

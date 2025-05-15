@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/margin_xlarge">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/arrowBack"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/default_margin"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/back_button_desc"
+            android:focusable="true"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Like Button (Still present in layout but hidden by Fragment code) -->
+        <ImageView
+            android:id="@+id/likeButton"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:contentDescription="@string/like_button_desc"
+            android:src="@drawable/ic_heart_outline"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" /> <!-- Changed tools:visibility to gone -->
+
+        <!-- Product Image Carousel -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/productImageCarousel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/carousel_height"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/arrowBack" />
+
+        <!-- Dots Indicator -->
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:dotsColor="@color/grey"
+            app:dotsSize="@dimen/dot_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productImageCarousel"
+            app:selectedDotColor="@color/colorPrimary" />
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dots_indicator"
+            tools:text="Product Name Placeholder" />
+
+        <!-- Category and Condition Layout -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/categoryConditionLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:paddingTop="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productName">
+
+            <!-- Category Row -->
+            <TextView
+                android:id="@+id/categoryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/productCategoryText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:gravity="end"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/dark_green"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/categoryLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/categoryLabel"
+                app:layout_constraintTop_toTopOf="@id/categoryLabel"
+                tools:text="Furniture" />
+
+            <!-- Condition Row -->
+            <TextView
+                android:id="@+id/conditionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="Condition"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/categoryLabel" />
+
+            <TextView
+                android:id="@+id/productConditionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:gravity="end"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/conditionLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/conditionLabel"
+                app:layout_constraintTop_toTopOf="@id/conditionLabel"
+                tools:text="Good" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Description Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/descriptionCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryConditionLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:id="@+id/toggleDescriptionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/descriptionTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Details"
+                        android:textAppearance="?attr/textAppearanceCaption"
+                        android:textColor="@color/grey"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/arrowIcon"
+                        android:layout_width="@dimen/icon_small"
+                        android:layout_height="@dimen/icon_small"
+                        android:contentDescription="@string/toggle_description_desc"
+                        android:src="@drawable/arrow_back"
+                        app:tint="@color/grey" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/productDescriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:lineSpacingExtra="@dimen/line_spacing"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/dark_gray"
+                    android:visibility="gone"
+                    tools:text="Placeholder description text goes here. It might be multiple lines long."
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Buttons -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionCard">
+
+            <Button
+                android:id="@+id/exploreSellerProfileButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+            android:backgroundTint="@color/black"
+            android:text="@string/see_seller_button"
+            android:textColor="@color/white"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/approveItemButton"
+            tools:text="See Seller" />
+
+            <Button
+                android:id="@+id/approveItemButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:backgroundTint="@color/dark_green"
+                android:text="Approve"
+                android:textColor="@color/white"
+                android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/exploreSellerProfileButton"
+            app:layout_constraintEnd_toStartOf="@+id/removeItemButton"
+            tools:text="Approve Item"
+            tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/removeItemButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:backgroundTint="@color/red"
+            android:text="Reject"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/approveItemButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Reject Item"
+            tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Buttons -->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/buttonsLayout"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/margin_large"-->
+<!--            android:layout_marginTop="@dimen/margin_large"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/descriptionCard">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/exploreSellerProfileButton"-->
+<!--                style="@style/Widget.MaterialComponents.Button"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="@dimen/margin_small"-->
+<!--                android:backgroundTint="@color/black"-->
+<!--                android:text="@string/see_seller_button"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/removeItemButton"-->
+<!--                app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:text="See Seller" />-->
+
+<!--            &lt;!&ndash; Inside buttonsLayout in fragment_admin_items_details.xml &ndash;&gt;-->
+<!--            <Button-->
+<!--                android:id="@+id/approveItemButton"-->
+<!--                style="@style/Widget.MaterialComponents.Button"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/margin_small"-->
+<!--                android:backgroundTint="@color/dark_green"-->
+<!--                android:text="Approve"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/removeItemButton"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/exploreSellerProfileButton"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:text="Approve Item"-->
+<!--                tools:visibility="visible" />-->
+<!--            &lt;!&ndash; *** MODIFIED BUTTON *** &ndash;&gt;-->
+<!--            <Button-->
+<!--                android:id="@+id/removeItemButton"-->
+<!--                style="@style/Widget.MaterialComponents.Button"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/margin_small"-->
+<!--                android:backgroundTint="@color/red"-->
+<!--                android:text="@string/remove_item_button"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/approveItemButton"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:text="Remove Item"-->
+<!--                tools:visibility="visible" />-->
+<!--            &lt;!&ndash; *** END OF MODIFIED BUTTON *** &ndash;&gt;-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

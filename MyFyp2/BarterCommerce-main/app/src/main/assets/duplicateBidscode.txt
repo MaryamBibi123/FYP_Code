@@ -1,0 +1,23 @@
+val currentUserId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+val bidsRef = FirebaseDatabase.getInstance().getReference("Users")
+    .child(currentUserId)
+    .child("bids")
+    .child("placed")
+
+// Check if a bid for the current item already exists
+bidsRef.orderByChild("itemId").equalTo(item.itemId)
+    .addListenerForSingleValueEvent(object : ValueEventListener {
+        override fun onDataChange(snapshot: DataSnapshot) {
+            if (snapshot.exists()) {
+                // Duplicate bid exists!
+                Toast.makeText(context, "You've already placed a bid on this item!", Toast.LENGTH_SHORT).show()
+            } else {
+                // Safe to place a new bid
+                placeBid(item)
+            }
+        }
+
+        override fun onCancelled(error: DatabaseError) {
+            // Handle error
+        }
+    })

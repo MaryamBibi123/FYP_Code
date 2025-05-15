@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_margin"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/card_padding"
+        android:divider="?android:attr/dividerHorizontal"
+        android:showDividers="middle">
+
+
+        <!-- User Info Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginTop="@dimen/space_small"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="@dimen/card_corner_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        android:padding="@dimen/space_small">
+
+        <!-- User Info Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/userFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:text="John Doe"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_size_primary" />
+
+            <TextView
+                android:id="@+id/lastUpdated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_small"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="active 4 days ago"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_size_secondary" />
+
+            <TextView
+                android:id="@+id/userExchanges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_small"
+                android:text="Exchanges: 15"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_size_secondary" />
+        </LinearLayout>
+
+        <!-- Profile Picture Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:layout_gravity="center_vertical"
+            app:cardCornerRadius="@dimen/profile_pic_size"
+            app:cardElevation="@dimen/space_small">
+
+            <ImageView
+                android:id="@+id/userProfilePic"
+                android:layout_width="@dimen/profile_pic_size"
+                android:layout_height="@dimen/profile_pic_size"
+                android:layout_margin="@dimen/space_small"
+                android:layout_gravity="center"
+                android:background="@drawable/circular_border"
+                android:contentDescription="User Profile Picture"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+    <!-- Rating & Success Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+
+            android:layout_marginTop="@dimen/space_small"
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:id="@+id/userRating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Rating: 4.5"
+                    android:textColor="@color/rating_color"
+                    android:textSize="@dimen/text_size_secondary" />
+
+                <TextView
+                    android:id="@+id/userSuccessRate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Success: 0%"
+                    android:textColor="@color/success_color"
+                    android:textSize="@dimen/text_size_secondary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:paddingHorizontal="@dimen/space_medium"
+            android:paddingBottom="@dimen/space_medium"
+            android:weightSum="2"> <!-- Adjusted weightSum to 2 to balance both cards -->
+
+            <!-- See Details Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+            android:layout_height="@dimen/button_min_height"
+            android:layout_marginEnd="@dimen/space_small"
+                android:id="@+id/seeDetailsIcon"
+
+                android:backgroundTint="@color/white"
+            app:cardPreventCornerOverlap="true"
+
+            app:cardCornerRadius="@dimen/block_button_size"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/space_small">
+
+                <ImageView
+                    android:layout_width="@dimen/block_button_size"
+                    android:layout_height="@dimen/block_button_size"
+                    android:contentDescription="See Details"
+                    android:padding="@dimen/space_small"
+                    android:src="@drawable/ic_see_details"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_small"
+                    android:text="See Details"
+                    android:maxLines="1"
+                    android:textColor="@color/see_details_button_color"
+                    android:textSize="@dimen/text_size_button"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Block User Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+        android:layout_height="@dimen/button_min_height"
+        android:backgroundTint="@color/white"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="@dimen/block_button_size"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/blockUserButton"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_small">
+
+            <ImageView
+                android:id="@+id/blockUserIcon"
+                android:layout_width="@dimen/block_button_size"
+                android:layout_height="@dimen/block_button_size"
+                android:contentDescription="Block User"
+                android:padding="@dimen/space_small"
+                android:src="@drawable/ic_block_user"
+                app:tint="@color/block_button_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/BlockUserText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_small"
+                android:text="Block"
+                android:textColor="@color/block_button_color"
+                android:textSize="@dimen/text_size_button"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
+
+        <!-- Block Button Section -->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            app:cardPreventCornerOverlap="true"-->
+<!--            android:layout_marginTop="@dimen/spacing_large"-->
+
+<!--            app:cardCornerRadius="@dimen/block_button_size"-->
+<!--          >-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="129dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="@dimen/space_medium">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/blockUserButton"-->
+<!--                    android:layout_width="@dimen/block_button_size"-->
+<!--                    android:layout_height="@dimen/block_button_size"-->
+<!--                    android:contentDescription="Block User"-->
+<!--                    android:padding="@dimen/space_small"-->
+<!--                    android:src="@drawable/ic_block_user"-->
+<!--                    app:tint="@color/block_button_color" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/space_small"-->
+<!--                    android:fontFamily="sans-serif-medium"-->
+<!--                    android:text="Block"-->
+<!--                    android:textColor="@color/block_button_color"-->
+<!--                    android:textSize="@dimen/text_size_button" />-->
+<!--            </LinearLayout>-->
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
